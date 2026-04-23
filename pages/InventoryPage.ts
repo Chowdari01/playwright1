@@ -13,5 +13,9 @@ export class InventoryPage {
 
   async openMenu() {
     await this.page.locator('#react-burger-menu-btn').click();
+    await expect(this.page.getByText('All Items')).toBeVisible();
+    await expect(this.page.getByText('About')).toBeVisible();
+    await expect(this.page.getByText('Logout')).toBeVisible();
+    await expect(this.page.getByText('Reset App State')).toBeVisible();
   }
 }
